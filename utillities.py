@@ -143,3 +143,28 @@ def provjera_korisnickog_unos(telefon, email, ime_ili_naziv, prezime_ili_web):
 
         else:
             return None
+def provjera_unosa_artikla(naslov, opis, cijena, snaga):
+    try:
+        if len(naslov) == 0 or len(opis) == 0 or cijena == '' or snaga == '':
+            raise IznimkaPrazanTekst()
+
+        if int(cijena) < 0 or int(snaga) < 0:
+            raise Exception(f"Potrebno upisati pozitivan cijeli broj!")
+
+    except IznimkaPrazanTekst as e:
+        return str(e)
+
+    except ValueError:
+        return('Potrebno upisati broj!')
+
+    except Exception as e:
+        return str(e)
+
+
+def provjera_unosa_prodaje(korisnik, prodaja):
+    try:
+        if korisnik == '' or prodaja == '':
+            raise IznimkaPrazanTekst()
+
+    except IznimkaPrazanTekst as e:
+        return str(e)

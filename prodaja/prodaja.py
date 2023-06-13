@@ -1,6 +1,3 @@
-from korisnik import ispis_korisnika
-from artikl import ispis_artikla
-
 class Prodaja:
     def __init__(self, datum, korisnik, artikl):
         self.datum = datum
@@ -8,10 +5,15 @@ class Prodaja:
         self.artikl = artikl
 
     def ispis(self):
-        self.korisnik.ispis()
-        self.artikl.ispis()
-        print('Datum isteka:')
-        print(f"\tDan: {self.datum.day}")
-        print(f"\tMjesec: {self.datum.month}")
-        print(f"\tGodina: {self.datum.year}")
-        print('-' * 20)
+        return f'{self.korisnik.email}: {self.artikl.naslov}'
+
+        #self.korisnik.ispis()
+
+        #self.artikl.ispis()
+
+        #print('Datum isteka prodaje: ')
+        #print(f'\t Dan: {self.datum.day}')
+        #print(f'\t Mjesec: {self.datum.month}')
+        #print(f'\t Godina: {self.datum.year}')
+
+        #print("\n")

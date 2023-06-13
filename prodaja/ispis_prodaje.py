@@ -1,6 +1,4 @@
-
 def ispis_svih_prodaja(prodaje):
-    print('Ispis svih prodaja:')
+    print("Popis svih prodaja: ")
     for prodaja in prodaje:
         prodaja.ispis()
-

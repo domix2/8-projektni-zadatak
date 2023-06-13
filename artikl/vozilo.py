@@ -1,11 +1,8 @@
 class Vozilo:
+    def __izracunaj_kw(self, konjska_snaga):
+        kw = int(konjska_snaga * 0.7355)
+        return kw
 
-    def __izracunaj_kw(self, snaga):
-        return int(snaga*0.735)
-
-    def cijena_osiguranja(self, snaga):
-        kilovati = self.__izracunaj_kw(snaga)
-        return kilovati*15
-
-
-
+    def cijena_osiguranja(self, konjska_snaga):
+        cijena = 15 * self.__izracunaj_kw(konjska_snaga)
+        return cijena
